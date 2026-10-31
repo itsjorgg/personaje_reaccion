@@ -15,9 +15,40 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color:
 #scene { display: block; width: 100%; height: 100%; filter: grayscale(1) contrast(1.15); }
 
 .title {
-  position: fixed; top: 4vh; left: 0; right: 0; margin: 0; text-align: center;
-  font: 700 clamp(1.6rem, 4vw, 3rem)/1 Georgia, "Times New Roman", serif;
-  letter-spacing: .12em; text-transform: uppercase; pointer-events: none;
+  position: fixed; top: 2.5vh; left: 0; right: 0; margin: 0;
+  display: flex; flex-direction: column; align-items: center;
+  font-family: "Chango", Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 7vw, 5rem);
+  line-height: .95;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  pointer-events: none;
+  filter: drop-shadow(.05em .07em 0 #0f0e0e); /* sombra negra desplazada */
+}
+
+.title span { position: relative; display: block; color: transparent; }
+.title span:nth-child(1) { transform: rotate(-2.5deg); }
+.title span:nth-child(2) { transform: rotate(1.5deg) translateX(.25em); }
+
+.title span::before,
+.title span::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+}
+
+/* capa de atrás: contorno negro grueso */
+.title span::before {
+  color: #000;
+  -webkit-text-stroke: .16em #000;
+}
+
+/* capa de adelante: relleno degradado rojo → naranja */
+.title span::after {
+  background: linear-gradient(180deg, #eae0df 10%, #efeeec 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .grain, .flicker, .vignette { position: fixed; pointer-events: none; }
