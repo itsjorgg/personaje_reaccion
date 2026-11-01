@@ -24,7 +24,7 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color:
   letter-spacing: .02em;
   text-transform: uppercase;
   pointer-events: none;
-  filter: drop-shadow(.05em .07em 0 #0f0e0e); /* sombra negra desplazada */
+  filter: drop-shadow(.05em .07em 0 #0f0e0e); 
 }
 
 .title span { position: relative; display: block; color: transparent; }
@@ -37,13 +37,12 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color:
   position: absolute; inset: 0;
 }
 
-/* capa de atrás: contorno negro grueso */
+
 .title span::before {
   color: #000;
   -webkit-text-stroke: .16em #000;
 }
 
-/* capa de adelante: relleno degradado rojo → naranja */
 .title span::after {
   background: linear-gradient(180deg, #eae0df 10%, #efeeec 90%);
   -webkit-background-clip: text;
@@ -58,6 +57,34 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color:
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   animation: grain .5s steps(5) infinite;
 }
+
+.interacciones-ui {
+  position: absolute;
+  bottom: 20px; 
+  left: 20px;
+  color: #333; 
+  font-family: sans-serif;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px; 
+  border-radius: 6px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.interacciones-ui p {
+  margin: 0 0 5px 0; 
+  font-size: 14px; 
+  font-family: "Chango", Impact, sans-serif;
+}
+
+.interacciones-ui ul {
+  margin: 0;
+  padding-left: 15px; 
+  font-size: 10px; 
+  line-height: 1.4; 
+
+}
+
 @keyframes grain {
   0%   { transform: translate(0, 0); }
   20%  { transform: translate(-6%, 4%); }

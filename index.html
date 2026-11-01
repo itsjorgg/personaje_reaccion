@@ -11,16 +11,24 @@
 
   </head>
   <body>
-    <div class="stage"><canvas id="scene"></canvas></div>
+   <div class="stage"><canvas id="scene"></canvas></div>
     
-    <h1 class="title">
-  <span data-text="Steamboat">Steamboat</span>
-  <span data-text="Willie">Willie</span>
+    <h1 class="title" id="texto-interactivo">
+      <span data-text="Steamboat">Steamboat</span>
+      <span data-text="Willie">Willie</span>
 </h1>
 
     <div class="grain"></div>
     <div class="flicker"></div>
     <div class="vignette"></div>
+    <div class="interacciones-ui">
+  <p><strong>Controles:</strong></p>
+  <ul>
+    <li><strong>Mover mouse:</strong> Desplazar modelo</li>
+    <li><strong>Click derecho + arrastrar:</strong> Rotar modelo</li>
+    <li><strong>Rueda (Scroll):</strong> Acercar / Alejar</li>
+  </ul>
+</div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
